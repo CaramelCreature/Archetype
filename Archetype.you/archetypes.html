@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>archetypes.you - IITD Personas</title>
-    <!-- Funny Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@400;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Icons -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -30,7 +30,7 @@
         <div class="nav-links">
             <a href="index.html" class="nav-item">Home</a>
             <a href="archetypes.html" class="nav-item active">Archetypes</a>
-            <a href="index.html#research" class="nav-item">Research</a>
+            <a href="research.html" class="nav-item">Research</a>
         </div>
     </nav>
 
@@ -47,7 +47,6 @@
                 <div class="sketch-line"></div>
             </div>
             <div class="grid-gallery" id="facche-gallery">
-                <!-- JS will populate -->
             </div>
 
             <div class="category-header" style="margin-top: 4rem;">
@@ -55,7 +54,6 @@
                 <div class="sketch-line"></div>
             </div>
             <div class="grid-gallery" id="senior-gallery">
-                <!-- JS will populate -->
             </div>
         </section>
 
@@ -64,9 +62,8 @@
     <script src="script.js"></script>
     <script>
         lucide.createIcons();
-        // Render gallery on load
         window.onload = function () {
-            renderFullGallery();
+            if (typeof initGallery === 'function') initGallery();
         };
     </script>
 </body>

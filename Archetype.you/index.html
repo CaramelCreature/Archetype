@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>archetypes.you - Discover Your IITD Persona</title>
-    <!-- Funny Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@400;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Icons -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body class="dark-theme">
 
-    <!-- Paper Texture Overlay -->
     <div class="paper-overlay"></div>
 
     <nav class="navbar">
@@ -35,7 +34,6 @@
 
     <main id="app-container">
 
-        <!-- SECTION 1: HOME & UPLOAD -->
         <section id="home" class="section">
             <div class="hero-doodle">
                 <h1>Who are you <br><span class="highlight-marker">really?</span></h1>
@@ -53,7 +51,6 @@
                     </div>
                 </div>
 
-                <!-- USER SELECTION (Hidden initially) -->
                 <div id="user-selection-container" class="hidden" style="margin-top: 2rem;">
                     <h2>Wait! Who are you in the chat?</h2>
 
@@ -74,7 +71,6 @@
             </div>
         </section>
 
-        <!-- SECTION 2: RESULTS (Below Home, Hidden initially) -->
         <section id="results" class="section hidden">
             <div class="result-container">
                 <div class="result-header">
@@ -83,7 +79,7 @@
                 </div>
 
                 <div class="main-card-layout">
-                    <!-- Left: The Card -->
+
                     <div class="archetype-card-display" id="main-archetype-card">
                         <div class="pin"></div>
                         <div class="card-art" id="archetype-art">🤓</div>
@@ -95,11 +91,10 @@
                                     <div class="stat-fill" style="width: 95%"></div>
                                 </div>
                             </div>
-                            <!-- Populated via JS -->
                         </div>
                     </div>
 
-                    <!-- Right: Details -->
+
                     <div class="details-notebook">
                         <div class="details-content">
                             <h3><i data-lucide="search"></i> Analysis</h3>
