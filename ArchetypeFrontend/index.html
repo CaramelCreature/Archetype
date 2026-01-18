@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>archetypes.you - Discover Your IITD Persona</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="dark-theme">
+
+    <div class="paper-overlay"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="doodle-star">★</span>
+            <span>archetypes.you</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item active">Home</a>
+            <a href="archetypes.html" class="nav-item">Archetypes</a>
+            <a href="research.html" class="nav-item">Research</a>
+        </div>
+    </nav>
+
+    <main id="app-container">
+
+        <section id="home" class="section">
+            <div class="hero-doodle">
+                <h1>Who are you <br><span class="highlight-marker">really?</span></h1>
+                <p class="subtitle">Upload your WhatsApp chat to find out which campus cliché you embody.</p>
+
+                <div class="upload-card">
+                    <div class="tape-strip top"></div>
+                    <div class="drop-zone" id="drop-zone">
+                        <i data-lucide="file-text" class="bounce-icon"></i>
+                        <h3>Drop your <code class="sketchy-code">_chat.txt</code> here!</h3>
+                        <p class="small-text">(We analyze it locally. Zuck doesn't see a thing.)</p>
+                        <input type="file" id="fileInput" accept=".txt" hidden>
+                        <button class="btn-sketch" onclick="document.getElementById('fileInput').click()">Pick a
+                            File</button>
+                    </div>
+                </div>
+
+                <div id="user-selection-container" class="hidden" style="margin-top: 2rem;">
+                    <h2>Wait! Who are you in the chat?</h2>
+
+                    <div class="search-container">
+                        <input type="text" id="user-search" placeholder="Type name to filter..." class="sketchy-input"
+                            style="width: 300px; display:inline-block;">
+                    </div>
+
+                    <select id="user-select" class="sketchy-input"
+                        style="width: 300px; display:inline-block; vertical-align:top;">
+                        <option value="" disabled selected>Select your name...</option>
+                    </select>
+                    <br>
+                    <button id="analyze-btn" class="btn-sketch primary-btn">Reveal My Truth</button>
+                    <button id="reset-btn" class="btn-sketch" onclick="location.reload()"
+                        style="background:#555; font-size:1rem;">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="section hidden">
+            <div class="result-container">
+                <div class="result-header">
+                    <p>The Oracle declares you are:</p>
+                    <h1 id="archetype-name" class="wiggle-text">The Maggu</h1>
+                </div>
+
+                <div class="main-card-layout">
+
+                    <div class="archetype-card-display" id="main-archetype-card">
+                        <div class="pin"></div>
+                        <div class="card-art" id="archetype-art">🤓</div>
+                        <h2 id="card-title">The Maggu</h2>
+                        <div class="card-stats">
+                            <div class="stat-row">
+                                <span>Studious</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="details-notebook">
+                        <div class="details-content">
+                            <h3><i data-lucide="search"></i> Analysis</h3>
+                            <p id="archetype-desc">You are the academic backbone of the hostel.</p>
+
+                            <div class="traits-grid">
+                                <div class="trait-box quirk">
+                                    <h4>⚡ Quirks</h4>
+                                    <ul id="quirks-list"></ul>
+                                </div>
+                                <div class="trait-box flaw">
+                                    <h4>💀 Fatal Flaw</h4>
+                                    <p id="flaw-text"></p>
+                                </div>
+                            </div>
+
+                            <div class="relations-box">
+                                <h4>❤️ Compatible With</h4>
+                                <span id="compatible-text"></span>
+                            </div>
+
+                            <div class="secondary-box">
+                                <h4>🌗 Secondary Vibe</h4>
+                                <span id="secondary-text"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
